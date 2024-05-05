@@ -38,17 +38,22 @@ const StyledLink = styled(Link)`
   }
 `;
 
-
 const Navbar = () => {
   return (
     <Nav>
-      <NavBrand>Branch Art</NavBrand>
+      {/* Wrap the NavBrand inside a Link component */}
+      <NavBrand>
+        <StyledLink to="/">Branch Art</StyledLink>
+      </NavBrand>
       <NavLinks>
         <NavLink>
           <StyledLink to="/">Home</StyledLink>
         </NavLink>
         <NavLink>
           <StyledLink to="/art">Art</StyledLink>
+        </NavLink>
+        <NavLink>
+          <StyledLink to="/realestate">RealEstate</StyledLink>
         </NavLink>
       </NavLinks>
     </Nav>

@@ -76,7 +76,7 @@ const ArtList = styled(Slider)`
 `;
 
 const ArtImage = styled.img`
-  width: 100%; /* Make the image fill the entire width of its container */
+  width: 60%; /* Make the image fill the entire width of its container */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Ensure the image is treated as a block element */
   margin: 0 auto; /* Center the image horizontally */
