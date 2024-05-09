@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import IMG_3025 from "../photos/IMG_3025.JPG"; // Import the image
+import IMG_2864 from "../photos/IMG_2864.JPG"; // Import the image
+import IMG_2872 from "../photos/IMG_2872.JPG"; // Import the image
+
 
 const DisplayContainer = styled.div`
   display: flex;
@@ -47,21 +51,21 @@ const Description = styled.div`
 const estatesData = [
   {
     id: 1,
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: IMG_2864, //imported image
     location: "Los Angeles, CA",
     dateSold: "March 2024",
     description: "Cozy apartment near downtown LA",
   },
   {
     id: 2,
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: IMG_3025, // Use the imported image
     location: "New York City, NY",
     dateSold: "February 2024",
     description: "Luxury loft in Manhattan",
   },
   {
     id: 3,
-    imageUrl: "https://via.placeholder.com/300",
+    imageUrl: IMG_2872,
     location: "Miami, FL",
     dateSold: "January 2024",
     description: "Beachfront condo with ocean view",
@@ -72,8 +76,8 @@ const estatesData = [
     location: "San Francisco, CA",
     dateSold: "December 2023",
     description: "Modern penthouse in the heart of SF",
-  },  
-  
+  },
+
   // Add more estate data as needed
 ];
 
