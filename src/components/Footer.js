@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Styled components for the footer
 const FooterContainer = styled.footer`
-  background-color: #711472;
+  background-color: #3818d4;
   color: #fff;
   padding: 5px;
   text-align: center;
@@ -30,21 +30,21 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-f">Facebook</i>
+          <i className="fab fa-facebook-f"></i>
         </SocialLink>
         <SocialLink
           href="https://www.twitter.com/your_twitter_page"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-twitter">Twitter</i>
+          <i className="fab fa-twitter"></i>
         </SocialLink>
         <SocialLink
           href="https://www.instagram.com/your_instagram_page"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-instagram">Instagram</i>
+          <i className="fab fa-instagram"></i>
         </SocialLink>
         {/* Add more social media links as needed */}
       </SocialMedia>
