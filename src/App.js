@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import GlobalStyle from "./components/GlobalStyles";
 
 // Global styles using styled-components
 const GlobalStyles = createGlobalStyle`
@@ -13,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+
+  
+
   /* Additional Styles */
   body {
     overflow-x: hidden; /* Prevent horizontal overflow */
@@ -21,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
 
 // Container styled-component
 const Container = styled.div`
-  background-color: #c198fa;
+  background-color: #18b8d4;
   height: 100vh;
   width: 100%;
   /* scroll-snap-type: y mandatory; */
@@ -32,6 +36,7 @@ const Container = styled.div`
 function App() {
   return (
     <>
+      <GlobalStyle />
       <GlobalStyles />
       <Container>
         <Navbar />

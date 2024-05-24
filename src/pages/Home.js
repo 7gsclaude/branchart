@@ -4,27 +4,37 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HowardSelfie from "../photos/HowardSelfie.png"; // Import the image
-import IMG_6212 from "../photos/IMG_6212.JPG"; // Import the image
+import IMG_2872 from "../photos/IMG_2872.JPG"; // Import the image
 import IMG_3027 from "../photos/IMG_3027.JPG"; // Import the image
 import FloatingImage from "../components/FloatingImage"; // Import the FloatingImage component
+import BranchLogo from "../photos/BranchLogo.PNG"; // Import the logo image
+import IMG_6212 from "../photos/IMG_6212.JPG"; // Import the image
 
 // Styled components for the homepage
 const HomePageContainer = styled.div`
   padding: 20px;
 `;
 
-const Summary = styled.p`
-  position: relative;
+const OpeningStatement = styled.h1`
+  text-align: center;
+  margin-bottom: 20px;
+
+`;
+
+const SecondSummary = styled.p`
   z-index: 2;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #666;
   text-align: justify;
   padding: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
   border-radius: 8px;
-  background-color: #3818d4;
+  background-color: #c198fa;
   color: white;
+  margin-top: 60px; /* Add margin top to create space */
+  width: 60%;
+  margin-left: 200px;
 `;
 
 const SummaryContainer = styled.div`
@@ -33,6 +43,17 @@ const SummaryContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 `;
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center; /* Center the logo horizontally */
+`;
+
+const BranchLogoImage = styled.img`
+  width: 200px;
+  margin-bottom: 20px;
+`;
+
 
 const ArtTitle = styled.h3`
   text-align: center;
@@ -79,8 +100,8 @@ const ArtPrice = styled.p`
 `;
 
 const TopImage = styled.img`
-  width: 200px;
-  margin-bottom: 20px;
+  width: 40%;
+  
   border-radius: 8px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 `;
@@ -88,19 +109,28 @@ const TopImage = styled.img`
 const Home = () => {
   return (
     <HomePageContainer>
+      <LogoContainer>
+        <BranchLogoImage src={BranchLogo} alt="Branch Logo" />
+      </LogoContainer>
+      <OpeningStatement>Welcome to my artistic realm!</OpeningStatement>
+
+      <FloatingImage src={IMG_2872} alt="Floating Image" />
+
       <SummaryContainer>
         {/* Floating placeholder image */}
-        <FloatingImage src={IMG_6212} alt="Floating Image" />
-        <Summary>
-          Welcome to my artistic realm! I'm Howard, an abstract artist
-          passionate about bringing depth and texture to my creations. Utilizing
-          acrylic paint along with a variety of mixed media, I strive to produce
-          artworks that evoke emotion and intrigue.
+
+        <SecondSummary>
+          I'm Howard, an abstract artist passionate about bringing depth and
+          texture to my creations. Utilizing acrylic paint along with a variety
+          of mixed media, I strive to produce artworks that evoke emotion and
+          intrigue.
           <br />
           Currently, I am the artist in residence at Ward 8, where my works are
-          proudly displayed. Feel free to explore my art and connect with me at
-          howardbranchart@gmail.com.
-        </Summary>
+          proudly displayed. Additionally, I specialize in selling properties
+          across the United States and in Mexico, offering a diverse range of
+          options for clients seeking their dream homes or investment
+          opportunities.
+        </SecondSummary>
         <TopImage src={HowardSelfie} alt="Top Image" />
       </SummaryContainer>
 

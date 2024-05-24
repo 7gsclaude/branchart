@@ -29,13 +29,11 @@ const sideToSideAnimation = keyframes`
 
 // Styled component for the animated placeholder image
 const FloatingImageWrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Align the floating image to the bottom */
-  margin-top: 20px; /* Adjust the vertical position */
+  position: fixed; /* Change position to fixed */
+  top: 50%; /* Position vertically in the center */
+  left: 20px; /* Adjust the distance from the left side */
+  transform: translateY(-50%); /* Adjust vertical centering */
 `;
-
 
 const PlaceholderImage = styled.img`
   width: 150px; /* Adjust the width of the placeholder image */

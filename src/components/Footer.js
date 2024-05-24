@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 // Styled components for the footer
 const FooterContainer = styled.footer`
-  background-color: #3818d4;
+  background-color: #c198fa;
   color: #fff;
-  padding: 5px;
+  padding: 20px;
   text-align: center;
 `;
 
@@ -16,8 +16,23 @@ const SocialMedia = styled.div`
 const SocialLink = styled.a`
   color: #fff;
   text-decoration: none;
-  margin: 0 10px;
+  margin-right: 10px; /* Add margin to create space between icons */
   font-size: 20px;
+  transition: color 0.3s ease;
+`;
+
+// Adjusted styles for the social links on hover
+const StyledSocialLink = styled(SocialLink)`
+  &:hover {
+    color: #ff0;
+  }
+`;
+
+const EmailLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px; /* Add margin to create space between links */
+  display: block; /* Ensure the link takes the full width */
 `;
 
 const Footer = () => {
@@ -25,32 +40,28 @@ const Footer = () => {
     <FooterContainer>
       <div>Follow us on social media:</div>
       <SocialMedia>
-        <SocialLink
+        <StyledSocialLink
           href="https://www.facebook.com/your_facebook_page"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-f"></i>
-        </SocialLink>
-        <SocialLink
-          href="https://www.twitter.com/your_twitter_page"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter"></i>
-        </SocialLink>
-        <SocialLink
+          <i className="fab fa-facebook-f"></i> {/* Facebook icon */}
+        </StyledSocialLink>
+        <StyledSocialLink
           href="https://www.instagram.com/your_instagram_page"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-instagram"></i>
-        </SocialLink>
+          <i className="fab fa-instagram"></i> {/* Instagram icon */}
+        </StyledSocialLink>
         {/* Add more social media links as needed */}
       </SocialMedia>
       <div>
         Visit <a href="https://www.lofty.com">Lofty</a> for real estate.
       </div>
+      <EmailLink href="mailto:howardbranchart@gmail.com">
+        Contact us via Email Click Here! 
+      </EmailLink>
     </FooterContainer>
   );
 };
