@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import IMG_6212 from "../photos/IMG_6212.JPG"; // Import the image
+import IMG_3027 from "../photos/IMG_3027.JPG"; // Import the image
 
 // Styled components for the art page
 const ArtPageContainer = styled.div`
@@ -14,12 +19,11 @@ const ArtSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row; /* Set the flex direction to row */
 `;
 
 const ArtItem = styled.div`
   margin: 10px;
-  width: 300px; /* Set a fixed width for each art item */
+  width: 300px;
 `;
 
 const ArtImage = styled.img`
@@ -36,23 +40,58 @@ const ArtDescription = styled.p`
   text-align: center;
 `;
 
+const ArtCarousel = styled(Slider)`
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto;
+`;
+
 const Art = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <ArtPageContainer>
       <h2>Art Gallery</h2>
+      <ArtCarousel {...settings}>
+        <div>
+          <ArtImage src={IMG_6212} alt="Artwork 1" />
+          <ArtDescription>
+            <strong>Carousel 1</strong>
+            <br />
+            Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </ArtDescription>
+        </div>
+        <div>
+          <ArtImage src={IMG_3027} alt="Artwork 2" />
+          <ArtDescription>
+            <strong>Carousel 2</strong>
+            <br />
+            Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </ArtDescription>
+        </div>
+        {/* Add more carousel slides as needed */}
+      </ArtCarousel>
       <ArtSection>
         <ArtItem>
-          <ArtImage src="https://via.placeholder.com/300" alt="Artwork 1" />
+          <ArtImage src="https://via.placeholder.com/300" alt="Artwork 3" />
           <ArtDescription>
-            Artwork 1 Description Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.
+            <strong>Artwork 1</strong>
+            <br />
+            Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </ArtDescription>
         </ArtItem>
         <ArtItem>
-          <ArtImage src="https://via.placeholder.com/300" alt="Artwork 2" />
+          <ArtImage src="https://via.placeholder.com/300" alt="Artwork 4" />
           <ArtDescription>
-            Artwork 2 Description Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.
+            <strong>Artwork 2</strong>
+            <br />
+            Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </ArtDescription>
         </ArtItem>
         {/* Add more ArtItem components as needed */}

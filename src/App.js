@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from "styled-components";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import GlobalStyle from "./components/GlobalStyles";
 
 // Global styles using styled-components
 const GlobalStyles = createGlobalStyle`
@@ -12,14 +11,24 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
-
-  
-
-  /* Additional Styles */
+  /* Hide scrollbar for all browsers */
   body {
     overflow-x: hidden; /* Prevent horizontal overflow */
+    padding: 0 20px; /* Add padding to the left and right */
+    max-width: auto; /* Optionally set a max-width */
+    margin: 0 auto; /* Center the content */
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  }
+
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+  body::-webkit-scrollbar {
+    display: none; /* Webkit-based browsers */
   }
 `;
 
@@ -36,7 +45,6 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <GlobalStyle />
       <GlobalStyles />
       <Container>
         <Navbar />
