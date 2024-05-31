@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyles";
+import IMG_2916 from "./photos/IMG_2916.jpg"; // Import the image
 
 // Global styles using styled-components
 const GlobalStyles = createGlobalStyle`
@@ -33,7 +34,10 @@ const GlobalStyles = createGlobalStyle`
 
 // Container styled-component
 const Container = styled.div`
-  background-color: #18b8d4;
+  background-image: url(${IMG_2916}); /* Set background image */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
   height: 100vh;
   width: 100%;
   scroll-behavior: smooth;

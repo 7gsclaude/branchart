@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HowardSelfie from "../photos/HowardSelfie.png"; // Import the image
-import BranchLogo from "../photos/BranchLogo.PNG"; // Import the logo image
+
 
 const HomePageContainer = styled.div`
   padding: 20px;
@@ -19,16 +19,12 @@ const Header = styled.header`
 
 const OpeningStatement = styled.h1`
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 1.5;
   text-align: left;
   margin: 0;
+  color: white;
 `;
 
-const LogoImage = styled.img`
-  width: 15%;
-  justify-content: center;
-  align-items: center;
-`;
 
 const ContentContainer = styled.div`
   display: flex;
@@ -42,20 +38,51 @@ const TextContainer = styled.div`
   margin-right: 20px;
 `;
 
-const SecondSummary = styled.p`
+const SecondSummary = styled.h3`
   z-index: 2;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #666;
+  font-size: 20px;
+  line-height: 2.5;
   text-align: justify;
   padding: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
-  border-radius: 8px;
-  background-color: #c198fa;
   color: white;
-  margin-top: 60px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 8px;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 2s, opacity 2s; /* Add transition for smoothness */
+  }
+
+  &:hover::before {
+    animation: pulseAnimation 2s infinite; /* Apply animation on hover */
+  }
+
+  @keyframes pulseAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 `;
+
 
 const ImageContainer = styled.div`
   flex-shrink: 0;
@@ -110,7 +137,7 @@ const Home = () => {
           <br />
           ARTISTIC REALM{" "}
         </OpeningStatement>
-        <LogoImage src={BranchLogo} alt="Branch Logo" />
+        
       </Header>
 
       <ContentContainer>
