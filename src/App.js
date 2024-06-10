@@ -3,8 +3,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import IMG_2916 from "./photos/IMG_2916.jpg"; // Import the image
-
+//import IMG_2916 from "./photos/IMG_2916.jpg";  Import the image
+  /* background-image: url(${IMG_2916});  Set background image (this goes in the container component*/
 // Global styles using styled-components
 const GlobalStyle = createGlobalStyle`
   /* CSS Reset */
@@ -30,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
 
 // Container styled-component
 const Container = styled.div`
-  /* background-image: url(${IMG_2916});  Set background image */
+
+  background-color: black;
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
@@ -58,7 +59,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Container src={IMG_2916} alt="background image">
+      <Container>
         <Navbar />
         <Content>
           <Main />
