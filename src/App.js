@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
 // Container styled-component
 const Container = styled.div`
-  background-image: url(${IMG_2916}); /* Set background image */
+  /* background-image: url(${IMG_2916});  Set background image */
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the background image */
@@ -58,7 +58,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Container>
+      <Container src={IMG_2916} alt="background image">
         <Navbar />
         <Content>
           <Main />
