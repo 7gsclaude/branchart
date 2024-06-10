@@ -3,8 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-//import IMG_2916 from "./photos/IMG_2916.jpg";  Import the image
-  /* background-image: url(${IMG_2916});  Set background image (this goes in the container component*/
+
 // Global styles using styled-components
 const GlobalStyle = createGlobalStyle`
   /* CSS Reset */
@@ -16,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal overflow */
-  
   }
 
   /* Hide scrollbar for Webkit-based browsers */
@@ -30,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
 // Container styled-component
 const Container = styled.div`
-
+  background-image: url("/BackgroundPainting.jpg"); /* Correctly reference the background image from the public folder */
   background-color: black;
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
@@ -52,7 +50,6 @@ const Container = styled.div`
 // Content styled-component to add margin
 const Content = styled.div`
   margin: 0 40px; /* Add margin to the left and right */
-
 `;
 
 function App() {
