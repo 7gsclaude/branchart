@@ -12,6 +12,8 @@ const ArtPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+
 `;
 
 const ArtSection = styled.section`
@@ -36,7 +38,7 @@ const ArtImage = styled.img`
 const ArtDescription = styled.p`
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: white;
   text-align: center;
 `;
 
