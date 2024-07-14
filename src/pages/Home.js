@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HowardSelfie from "../photos/HowardSelfie.png"; // Import the image
 
+const fadeAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const HomePageContainer = styled.div`
   padding: 20px;
-  
+  animation: ${fadeAnimation} 2s; /* Apply fade animation on initial load */
 `;
 
 const Header = styled.header`
@@ -15,6 +23,11 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const OpeningStatement = styled.h1`
@@ -23,19 +36,31 @@ const OpeningStatement = styled.h1`
   text-align: left;
   margin: 0;
   color: white;
-`;
 
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+`;
 
 const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TextContainer = styled.div`
   flex: 1;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const SecondSummary = styled.h3`
@@ -83,35 +108,16 @@ const SecondSummary = styled.h3`
   }
 `;
 
-
 const ImageContainer = styled.div`
   flex-shrink: 0;
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: flex-end;
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 5px;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-top: 50px solid white;
-    border-right: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    width: 40%;
-    z-index: 0;
-  }
-`;
 
-const floatAnimation = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
   }
 `;
 
@@ -123,12 +129,27 @@ const TopImage = styled.img`
   margin-left: auto;
   justify-content: right;
   clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-  animation: ${floatAnimation} 3s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const Home = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation when component mounts
+    setFadeIn(true);
+
+    // Reset animation state on unmount (optional)
+    return () => {
+      setFadeIn(false);
+    };
+  }, []);
+
   return (
-    <HomePageContainer>
+    <HomePageContainer style={{ opacity: fadeIn ? 1 : 0 }}>
       <Header>
         <OpeningStatement>
           WELCOME
@@ -137,7 +158,6 @@ const Home = () => {
           <br />
           ARTISTIC REALM{" "}
         </OpeningStatement>
-        
       </Header>
 
       <ContentContainer>
